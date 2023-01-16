@@ -1,0 +1,25 @@
+POST http://localhost:3000/url
+Content-Type: application/x-www-form-urlencoded
+
+url=https%3A%2F%2Fwww.bht-berlin.de%2F
+
+###
+
+POST http://localhost:3000/html?api_key=foobarbaz
+Content-Type: text/html
+
+<html><head><title>Test</title></head><body>🤔</body>
+
+###
+
+POST http://localhost:3000/html
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="html"; filename="file.htm"
+
+< test.htm
+--WebAppBoundary--
+
+###
+
